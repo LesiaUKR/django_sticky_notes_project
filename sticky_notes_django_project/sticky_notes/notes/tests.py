@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import Note
 
+
 class NoteModelTest(TestCase):
     def setUp(self):
         """
@@ -44,7 +45,6 @@ class NoteViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Test Note')
 
-
     def test_note_create_view(self):
         """
         Test that the note creation form works correctly:
@@ -81,5 +81,3 @@ class NoteViewTest(TestCase):
         response = self.client.post(reverse('note_delete', args=[str(self.note.id)]))
         self.assertEqual(response.status_code, 302)  # Check for redirect after successful deletion
         self.assertFalse(Note.objects.filter(id=self.note.id).exists())
-
-

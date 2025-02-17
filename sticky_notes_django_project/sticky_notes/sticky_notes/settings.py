@@ -121,8 +121,8 @@ STATIC_URL = "static/"
 
 # Add static files directories
 STATICFILES_DIRS = [
-BASE_DIR / "notes/static",
-# Add other app static directories if needed
+    BASE_DIR / "notes/static",
+    # Add other app static directories if needed
 ]
 
 # Define the root directory for static files

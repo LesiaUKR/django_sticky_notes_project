@@ -1,9 +1,9 @@
 from django.urls import path
 from .views import (
-note_list,
-note_create,
-note_update,
-note_delete,
+    note_list,
+    note_create,
+    note_update,
+    note_delete,
 )
 
 urlpatterns = [
