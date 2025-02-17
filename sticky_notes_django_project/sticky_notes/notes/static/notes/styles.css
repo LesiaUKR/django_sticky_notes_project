@@ -1,0 +1,190 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 25px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+header {
+    background: linear-gradient(to right, #4a90e2, #6cb2eb);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.note-title:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+/* Notes List */
+.note-list {
+    list-style: none;
+    padding: 0;
+}
+
+.note-list li {
+    background: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.note-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/*!* Note Links *!*/
+/*.note-list li a {*/
+/*    font-weight: bold;*/
+/*    color: #2c3e50;*/
+/*    transition: color 0.3s ease-in-out;*/
+/*}*/
+
+/*.note-list li a:hover {*/
+/*    color: #4a90e2;*/
+/*}*/
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Form Styling */
+.note-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f8f9fa;
+}
+
+.note-form textarea {
+    height: 120px;
+}
+
+.note-form button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.note-form button:hover {
+    background: #219150;
+}
+
+
+/* Delete Confirmation */
+.delete-confirm {
+    text-align: center;
+    padding: 20px;
+}
+
+.delete-confirm p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.delete-confirm button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.delete-confirm button:hover {
+    background: #c0392b;
+}
+
+.delete-confirm a {
+    margin-left: 10px;
+    background: #95a5a6;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+.delete-confirm a:hover {
+    background: #7f8c8d;
+}

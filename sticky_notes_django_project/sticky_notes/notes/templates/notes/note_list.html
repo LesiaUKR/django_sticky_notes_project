@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'note_create' %}" class="btn">Create New Note</a>
+<ul class="note-list">
+    {% for note in notes %}
+    <li>
+        <a href="{% url 'note_update' note.pk %}" class="note-title">{{ note.title }}</a>
+        <form action="{% url 'note_delete' note.pk %}" method="post" style="display:inline;">
+            {% csrf_token %}
+        <a href="{% url 'note_delete' note.pk %}" class="delete-btn">Delete</a>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

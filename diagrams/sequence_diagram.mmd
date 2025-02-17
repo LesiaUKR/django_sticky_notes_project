@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant User
+    participant Frontend
+    participant Backend
+    participant Database
+
+    User->>Frontend: Opens the note creation form
+    Frontend->>User: Displays the form
+    User->>Frontend: Enters data and clicks "Save"
+    Frontend->>Backend: Sends data to the server
+    Backend->>Database: Saves the note to the database
+    Database-->>Backend: Confirms the save operation
+    Backend-->>Frontend: Returns the result
+    Frontend-->>User: Displays a success message

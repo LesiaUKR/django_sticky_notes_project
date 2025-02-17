@@ -1,0 +1,41 @@
+classDiagram
+    class Note {
+        +int id
+        +string title
+        +string content
+        +datetime created_at
+        +datetime updated_at
+        +save()
+        +delete()
+    }
+
+    class NoteForm {
+        +string title
+        +string content
+        +save()
+    }
+
+    class NoteListView {
+        +list notes
+        +render()
+    }
+
+    class NoteCreateView {
+        +form
+        +save()
+    }
+
+    class NoteUpdateView {
+        +form
+        +save()
+    }
+
+    class NoteDeleteView {
+        +delete()
+    }
+
+    Note <|-- NoteForm
+    NoteForm <|-- NoteCreateView
+    NoteForm <|-- NoteUpdateView
+    Note <|-- NoteListView
+    Note <|-- NoteDeleteView
