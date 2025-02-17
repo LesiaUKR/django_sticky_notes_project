@@ -59,7 +59,7 @@ The Class Diagram represents the structure of the application's models and views
 2. Navigate to the project directory:
 
 ```bash
-cd sticky-notes-django
+cd sticky_notes_django_project
 ```
 3. Create a virtual environment and activate it:
 
@@ -72,18 +72,24 @@ source myenv/bin/activate  # On Windows: myenv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
-5. Apply migrations:
+
+5. Navigate to the sticky_notes directory:
 
 ```bash
-python manage.py makemigrations
+cd sticky_notes
+```
+
+6Apply migrations:
+
+```bash
 python manage.py migrate
 ```
-6. Run the development server:
+7. Run the development server:
 
 ```bash
 python manage.py runserver
 ```
-7. Open your browser and navigate to http://127.0.0.1:8000.
+8. Open your browser and navigate to http://127.0.0.1:8000.
 
 ---
 
@@ -103,3 +109,5 @@ python manage.py test notes
 ![sticky_notes_create_update_view](assets/sticky_notes_create_view.png)
 ### 3. Sticky notes confirm deletion view
 ![sticky_notes_confirm_delete_view](assets/sticky_notes_confirm_delete_view.png)
+### 4. Sticky notes tests' results
+![sticky_notes_test_results](assets/sticky_notes_test_results.png)
