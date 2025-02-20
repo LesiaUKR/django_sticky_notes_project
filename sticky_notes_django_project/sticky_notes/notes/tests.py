@@ -9,21 +9,20 @@ class NoteModelTest(TestCase):
         Set up a test note for use in the following tests.
         """
         self.note = Note.objects.create(
-            title='Test Note',
-            content='This is a test note.'
+            title="Test Note", content="This is a test note."
         )
 
     def test_note_has_title(self):
         """
         Test that a Note object has the expected title.
         """
-        self.assertEqual(self.note.title, 'Test Note')
+        self.assertEqual(self.note.title, "Test Note")
 
     def test_note_has_content(self):
         """
         Test that a Note object has the expected content.
         """
-        self.assertEqual(self.note.content, 'This is a test note.')
+        self.assertEqual(self.note.content, "This is a test note.")
 
 
 class NoteViewTest(TestCase):
@@ -32,8 +31,7 @@ class NoteViewTest(TestCase):
         Set up a test note for use in the view tests.
         """
         self.note = Note.objects.create(
-            title='Test Note',
-            content='This is a test note.'
+            title="Test Note", content="This is a test note."
         )
 
     def test_note_list_view(self):
@@ -41,9 +39,9 @@ class NoteViewTest(TestCase):
         Test that the note list view returns a status code of 200
         and contains the test note's title.
         """
-        response = self.client.get(reverse('note_list'))
+        response = self.client.get(reverse("note_list"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'Test Note')
+        self.assertContains(response, "Test Note")
 
     def test_note_create_view(self):
         """
@@ -51,12 +49,14 @@ class NoteViewTest(TestCase):
         - Submitting the form redirects to the expected page (status code 302).
         - The new note is saved in the database.
         """
-        response = self.client.post(reverse('note_create'), {
-            'title': 'New Note',
-            'content': 'This is a new note.'
-        })
-        self.assertEqual(response.status_code, 302)  # Check for redirect after successful creation
-        self.assertTrue(Note.objects.filter(title='New Note').exists())
+        response = self.client.post(
+            reverse("note_create"),
+            {"title": "New Note", "content": "This is a new note."},
+        )
+        self.assertEqual(
+            response.status_code, 302
+        )  # Check for redirect after successful creation
+        self.assertTrue(Note.objects.filter(title="New Note").exists())
 
     def test_note_update_view(self):
         """
@@ -64,13 +64,18 @@ class NoteViewTest(TestCase):
         - Submitting the form redirects to the expected page (status code 302).
         - The note's title and content are updated in the database.
         """
-        response = self.client.post(reverse('note_update', args=[str(self.note.id)]), {
-            'title': 'Updated Note',
-            'content': 'This note has been updated.'
-        })
-        self.assertEqual(response.status_code, 302)  # Check for redirect after successful update
+        response = self.client.post(
+            reverse("note_update", args=[str(self.note.id)]),
+            {
+                "title": "Updated Note",
+                "content": "This note has been updated.",
+            },
+        )
+        self.assertEqual(
+            response.status_code, 302
+        )  # Check for redirect after successful update
         updated_note = Note.objects.get(id=self.note.id)
-        self.assertEqual(updated_note.title, 'Updated Note')
+        self.assertEqual(updated_note.title, "Updated Note")
 
     def test_note_delete_view(self):
         """
@@ -78,6 +83,10 @@ class NoteViewTest(TestCase):
         - Submitting the form redirects to the expected page (status code 302).
         - The note is deleted from the database.
         """
-        response = self.client.post(reverse('note_delete', args=[str(self.note.id)]))
-        self.assertEqual(response.status_code, 302)  # Check for redirect after successful deletion
+        response = self.client.post(
+            reverse("note_delete", args=[str(self.note.id)])
+        )
+        self.assertEqual(
+            response.status_code, 302
+        )  # Check for redirect after successful deletion
         self.assertFalse(Note.objects.filter(id=self.note.id).exists())

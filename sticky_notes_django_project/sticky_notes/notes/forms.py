@@ -11,6 +11,7 @@ class NoteForm(forms.ModelForm):
         model (Note): The model associated with this form.
         fields (list): The fields to be included in the form.
     """
+
     class Meta:
         model = Note
-        fields = ['title', 'content']
+        fields = ["title", "content"]

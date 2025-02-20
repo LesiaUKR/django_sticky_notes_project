@@ -13,6 +13,7 @@ class Note(models.Model):
         created_at (DateTimeField): The timestamp when the note was created.
         updated_at (DateTimeField): The timestamp when the note was last updated.
     """
+
     title = models.CharField(max_length=100)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

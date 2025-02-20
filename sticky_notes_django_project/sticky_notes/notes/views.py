@@ -13,7 +13,7 @@ def note_list(request):
         HttpResponse: The rendered template displaying all notes.
     """
     notes = Note.objects.all()
-    return render(request, 'notes/note_list.html', {'notes': notes})
+    return render(request, "notes/note_list.html", {"notes": notes})
 
 
 def note_create(request):
@@ -29,14 +29,14 @@ def note_create(request):
         HttpResponse: Redirects to the note list on success,
         or re-renders the form if invalid.
     """
-    if request.method == 'POST':
+    if request.method == "POST":
         form = NoteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('note_list')
+            return redirect("note_list")
     else:
         form = NoteForm()
-    return render(request, 'notes/note_form.html', {'form': form})
+    return render(request, "notes/note_form.html", {"form": form})
 
 
 def note_update(request, pk):
@@ -54,14 +54,14 @@ def note_update(request, pk):
         or re-renders the form if invalid.
     """
     note = get_object_or_404(Note, pk=pk)
-    if request.method == 'POST':
+    if request.method == "POST":
         form = NoteForm(request.POST, instance=note)
         if form.is_valid():
             form.save()
-            return redirect('note_list')
+            return redirect("note_list")
     else:
         form = NoteForm(instance=note)
-    return render(request, 'notes/note_form.html', {'form': form})
+    return render(request, "notes/note_form.html", {"form": form})
 
 
 def note_delete(request, pk):
@@ -79,7 +79,7 @@ def note_delete(request, pk):
         or displays a confirmation page.
     """
     note = get_object_or_404(Note, pk=pk)
-    if request.method == 'POST':
+    if request.method == "POST":
         note.delete()
-        return redirect('note_list')
-    return render(request, 'notes/note_confirm_delete.html', {'note': note})
+        return redirect("note_list")
+    return render(request, "notes/note_confirm_delete.html", {"note": note})

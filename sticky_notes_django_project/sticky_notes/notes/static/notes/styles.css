@@ -86,17 +86,6 @@ a {
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-/*!* Note Links *!*/
-/*.note-list li a {*/
-/*    font-weight: bold;*/
-/*    color: #2c3e50;*/
-/*    transition: color 0.3s ease-in-out;*/
-/*}*/
-
-/*.note-list li a:hover {*/
-/*    color: #4a90e2;*/
-/*}*/
-
 .delete-btn {
     background-color: #dc3545;
     color: white;
